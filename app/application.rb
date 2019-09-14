@@ -4,8 +4,8 @@
 
 class Application 
 
-    def call(evn)
-        resp = Rack::Response.new
+    def call(evn) #env holds all of the reuest info in it
+        resp = Rack::Response.new # returns a response which consists of the status code, any headers, and the body. 
         
         if Time.now.hour >= 12
              resp.write "Good Afternoon!"
@@ -13,7 +13,7 @@ class Application
             resp.write "Good Morning!"
         end
 
-        resp.finish
+        resp.finish #completes the response
 
     end
 
